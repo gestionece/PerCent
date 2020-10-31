@@ -48,7 +48,6 @@ function Calc(data) {
                         LCLs[j].CON += 1;
                     }
                     if (data[i]["Stato OdL"].localeCompare("Chiuso") == 0 && (data[i]["Causale Esito"].localeCompare("Impossibilita'Â  di lavoro sotto tensione") == 0 || data[i]["Causale Esito"].localeCompare("Misuratore guasto / anomalia parola di stato") == 0 || data[i]["Causale Esito"].localeCompare("Altre cause") == 0 || data[i]["Causale Esito"].localeCompare("Dati misuratore non congruenti") == 0 || data[i]["Causale Esito"].localeCompare("Impedimento per ordine pubblico") == 0 || data[i]["Causale Esito"].localeCompare("Presenza dispositivo esterno") == 0 || data[i]["Causale Esito"].localeCompare("Sospetta manomissione / allaccio diretto") == 0)) {
-                        //console.log(data[i]["Causale Esito"]);
                         LCLs[j].AV += 1;
                     }
                 }
@@ -66,5 +65,6 @@ function Calc(data) {
             }
         }
         console.log(LCLs);
+        document.getElementById("jsondata").innerHTML = JSON.stringify(LCLs, undefined, 4);
     }
 }
